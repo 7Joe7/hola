@@ -3,13 +3,21 @@ module CLIHelper
   MESSAGES = {
       commit_git: 'Commiting to git...',
       push_rubygems: 'Pushing to rubygems.org...',
-      install_gem: 'Installing gem  and jgem locally...',
+      install_gem: 'Installing gem and jgem locally...',
       build_gem: 'Building gem...',
       build_gem_failed: 'The gem build failed. Please confirm the gem name and try again.',
       deploy_heroku: 'Deploying to heroku.',
       commit_github: 'Commiting to github.',
       default_message: 'Commit by script'
   }
+
+  def get_current_address
+    `PWD`
+  end
+
+  def get_current_folder
+    `basename $PWD`
+  end
 
   # Commits to git
   # @return [nil]
