@@ -55,6 +55,6 @@ if gem_name
     puts 'The gem build failed. Please confirm the gem name and try again.'
   end
 else
-  puts 'You did not enter a gem name. 
+  puts 'You did not enter a gem name.
 Please include it as an argument to the script or hard code it as a variable in the script.'
 end
