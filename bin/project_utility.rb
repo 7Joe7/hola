@@ -13,6 +13,7 @@ class ProjectUtility
   Please include it as an argument to the script or hard code it as a variable in the script.',
 
   def process_input(input, options = {})
+    p input
     input.each do |arg|
       case arg
         when '-g', '--github'
