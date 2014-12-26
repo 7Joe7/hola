@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'joe_utils'
-  s.version = '0.0.5'
+  s.version = '0.0.6'
   s.executables = %w(gem_util)
 
   s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
