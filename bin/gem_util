@@ -26,6 +26,13 @@ while [ "$1" != "" ]; do
     shift
 done
 
+echo "Commiting..."
+
+git add -u
+git commit -m "Build gem version"
+
+echo "Building..."
+
 # if the gem name has not been defined, print error message and exit
 if [ -z "$GEM_NAME" ]; then
     echo "You did not enter a gem name.  Please include it as an argument to the script or hard code it as a variable in the script." >&2
