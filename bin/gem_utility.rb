@@ -17,7 +17,7 @@ ARGV.each do |arg|
       push = true
     when '-h', '--help'
       print_help
-    when 'ip'
+    when '-ip'
       install = true
       push = true
     else
