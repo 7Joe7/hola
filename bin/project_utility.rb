@@ -41,7 +41,7 @@ class ProjectUtility
     commit_git
     commit_github if options[:github]
     deploy_heroku if options[:heroku]
-    options[:gem_name] ? build_gem(options[:gem_name], options) : puts(INCLUDE_GEM_NAME)
+    build_gem(options[:gem_name], options) if options[:gem_name]
   end
 end
 
