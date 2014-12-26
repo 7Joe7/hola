@@ -41,7 +41,6 @@ if gem_name
 
   # if the build failed (i.e. no file name obtained above), print error message and exit
   if gem_build_name
-    puts 'Built successful'
     # if above succeeded, then push to rubygems.org using the gem that was compiled
     if push
       puts 'Pushing...'
