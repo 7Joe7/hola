@@ -13,8 +13,12 @@ class ProjectUtility
   Please include it as an argument to the script or hard code it as a variable in the script.',
 
   def process_input(input, options = {})
-    p input
+    message = nil
     input.each do |arg|
+      if message
+        options[:message] = arg
+        next
+      end
       case arg
         when '-g', '--github'
           options[:github] = true
@@ -31,8 +35,8 @@ class ProjectUtility
           exit
         when '-ip'
           options[:install] = options[:push] = true
-        when CLI_MESSAGE_INPUT
-          options[:message] = arg
+        when '-m'
+          message = true
         else
           options[:gem_name] = arg
       end
