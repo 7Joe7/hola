@@ -5,6 +5,7 @@ require 'joe_utils'
 class ProjectUtility
 
   include CLIHelper
+  include RegExpHelper
 
   HELP_TEXT = 'Provide me with the name of the gem, you also can add options:
   i for installing the gem locally, p for pushing the gem to rubygems.org, h for help.',
@@ -29,6 +30,8 @@ class ProjectUtility
           exit
         when '-ip'
           options[:install] = options[:push] = true
+        when CLI_MESSAGE_INPUT
+          options[:message] = arg
         else
           options[:gem_name] = arg
       end
@@ -38,7 +41,7 @@ class ProjectUtility
 
   def run
     options = process_input(ARGV)
-    commit_git
+    commit_git(options[:message])
     commit_github if options[:github]
     deploy_heroku if options[:heroku]
     build_gem(options[:gem_name], options) if options[:gem_name]

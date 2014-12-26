@@ -8,14 +8,15 @@ module CLIHelper
       build_gem_failed: 'The gem build failed. Please confirm the gem name and try again.',
       deploy_heroku: 'Deploying to heroku.',
       commit_github: 'Commiting to github.',
+      default_message: 'Commit by script'
   }
 
   # Commits to git
   # @return [nil]
-  def commit_git
+  def commit_git(message)
     puts MESSAGES[:commit_git]
     puts `git add -u`
-    puts `git commit -m "Build gem version"`
+    puts `git commit -m "#{message || MESSAGES[:default_message]}"`
   end
 
   # Builds the named gem locally, in case of provided options pushes and installs the gem
