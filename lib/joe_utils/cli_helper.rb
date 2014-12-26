@@ -12,11 +12,11 @@ module CLIHelper
   }
 
   def get_current_address
-    `PWD`
+    `PWD`.chomp
   end
 
   def get_current_folder
-    `basename $PWD`
+    `basename $PWD`.chomp
   end
 
   # Commits to git
