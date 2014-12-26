@@ -6,4 +6,5 @@ require 'joe_utils/script_editor_helper'
 require 'joe_utils/script_renderer'
 require 'joe_utils/script'
 require 'joe_utils/socket_helper'
+require 'joe_utils/cli_helper'
 
