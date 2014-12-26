@@ -35,7 +35,7 @@ puts 'Building...'
 # if the gem name has not been defined, print error message and exit
 if gem_name
   # run the gem build and parse for the gem release filename
-  puts `gem build #{gem_name}.gemspec | awk '/File/ {print $2}`
+  puts `(gem build #{gem_name}.gemspec | awk '/File/ {print $2})`
   puts $2
   puts `awk '/File/ {print $2}`
 
