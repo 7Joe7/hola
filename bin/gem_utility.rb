@@ -36,25 +36,25 @@ puts 'Building...'
 if gem_name
   # run the gem build and parse for the gem release filename
   gem_build_name = `gem build "#{gem_name}.gemspec"`
-  puts gem_build_name
+  puts gem_build_name.match(/File: /).post_match
 
-  # if the build failed (i.e. no file name obtained above), print error message and exit
-  if gem_build_name
-    puts 'Built successful'
-    # if above succeeded, then push to rubygems.org using the gem that was compiled
-    if push
-      puts 'Pushing...'
-      `gem push #{gem_build_name}`
-    end
-    # install it locally
-    if install
-      puts 'Installing...'
-      `gem install #{gem_build_name}`
-      `jgem install #{gem_build_name}`
-    end
-  else
-    puts 'The gem build failed. Please confirm the gem name and try again.'
-  end
+  # # if the build failed (i.e. no file name obtained above), print error message and exit
+  # if gem_build_name
+  #   puts 'Built successful'
+  #   # if above succeeded, then push to rubygems.org using the gem that was compiled
+  #   if push
+  #     puts 'Pushing...'
+  #     `gem push #{gem_build_name}`
+  #   end
+  #   # install it locally
+  #   if install
+  #     puts 'Installing...'
+  #     `gem install #{gem_build_name}`
+  #     `jgem install #{gem_build_name}`
+  #   end
+  # else
+  #   puts 'The gem build failed. Please confirm the gem name and try again.'
+  # end
 else
   puts 'You did not enter a gem name.
 Please include it as an argument to the script or hard code it as a variable in the script.'
