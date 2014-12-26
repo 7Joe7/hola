@@ -37,7 +37,7 @@ if gem_name
   # run the gem build and parse for the gem release filename
   gem_build_name = `gem build #{gem_name}.gemspec`
   puts $2
-  puts `$2`
+  puts `awk '/File/ {print $2}`
 
   # if the build failed (i.e. no file name obtained above), print error message and exit
   if gem_build_name
