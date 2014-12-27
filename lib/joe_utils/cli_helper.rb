@@ -11,14 +11,6 @@ module CLIHelper
       default_message: 'Commit by script'
   }
 
-  def get_current_address
-    `PWD`.chomp
-  end
-
-  def get_current_folder
-    `basename $PWD`.chomp
-  end
-
   # Commits to git
   # @return [nil]
   def commit_git(message)

@@ -5,6 +5,14 @@ require 'zip'
 
 module FilesHelper
 
+  def get_current_address
+    Dir.pwd
+  end
+
+  def get_current_folder
+    File.basename(Dir.pwd)
+  end
+
   def dir_exists?(location)
     File.directory?(location) ? true : puts("Directory #{location} doesn't exist.")
   end
