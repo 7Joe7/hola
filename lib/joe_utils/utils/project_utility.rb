@@ -1,4 +1,4 @@
-require 'joe_utils.rb'
+require '/Users/Joe/Documents/Work/joe_utils/lib/joe_utils.rb'
 
 class ProjectUtility
 
