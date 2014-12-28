@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'lib/joe_utils/utils/project_utility'
+require 'joe_utils/utils/project_utility'
 
-ProjectUtility.new.run
+ProjectUtility.new.run(['-s', 'Test proj_util'])
