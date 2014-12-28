@@ -10,16 +10,16 @@ class JoeUtilsTest < Minitest::Test
   # def test_commit_build
   #   assert(ProjectUtility.new.run(['-bs', 'Test build proj_util']), 'Build not successful.')
   # end
-
-  def test_commit_install
-    assert(ProjectUtility.new.run(['-is', 'Test build install proj_util']), 'Install not successful.')
-  end
-
+  #
+  # def test_commit_install
+  #   assert(ProjectUtility.new.run(['-is', 'Test build install proj_util']), 'Install not successful.')
+  # end
+  #
   # def test_commit_push
   #   assert(ProjectUtility.new.run(['-ps', 'Test build push proj_util']), 'Push not successful.')
   # end
 
-  # def test_gem_util
-  #   assert(ProjectUtility.new.run(['-ips', 'Test build install push proj_util']), 'Something is wrong.')
-  # end
+  def test_gem_util
+    assert(ProjectUtility.new.run(['-ips', 'Test build install push proj_util']), 'Something is wrong.')
+  end
 end
