@@ -65,10 +65,12 @@ Text behind the command will be considered a message for git.'
 
   def run(input = nil)
     options = process_input(input || ARGV)
-    rake_test unless options[:skip_tests]
-    commit_git(options[:message])
-    commit_github if options[:github]
-    deploy_heroku if options[:heroku]
-    build_gem(options[:gem_name], options) if options[:gem_name]
+    success = true
+    success = rake_test unless options[:skip_tests]
+    success &&= commit_git(options[:message])
+    success &&= commit_github if options[:github]
+    success &&= deploy_heroku if options[:heroku]
+    success &&= build_gem(options[:gem_name], options) if options[:gem_name]
+    success
   end
 end
