@@ -49,8 +49,10 @@ Text behind the command will be considered a message for git.'
               options[:gem_name] ||= get_current_folder
             when 'i'
               options[:install] = true
+              options[:gem_name] ||= get_current_folder
             when 'p'
               options[:push] = true
+              options[:gem_name] ||= get_current_folder
             else
               puts HELP_TEXT
               exit
