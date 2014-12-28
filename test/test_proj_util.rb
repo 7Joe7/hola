@@ -8,6 +8,7 @@ class JoeUtilsTest < Minitest::Test
   end
 
   def test_commit_build
+    puts ProjectUtility.new.run(['-bs', 'Test build proj_util'])
     assert(ProjectUtility.new.run(['-bs', 'Test build proj_util']), 'Build not successful.')
   end
 
