@@ -7,9 +7,9 @@ class JoeUtilsTest < Minitest::Test
     assert(ProjectUtility.new.run(['-s', 'Test proj_util']), 'Commit not successful')
   end
 
-  # def test_commit_build
-  #   assert_equal(true, ProjectUtility.new.run(['-bs', 'Test build proj_util']))
-  # end
+  def test_commit_build
+    assert(ProjectUtility.new.run(['-bs', 'Test build proj_util']), 'Build not successful')
+  end
 
   # def test_commit_install
   #   assert_equal(true, ProjectUtility.new.run(['-is', 'Test build install proj_util']))
