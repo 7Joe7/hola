@@ -66,7 +66,7 @@ Text behind the command will be considered a message for git.'
   def run(input = nil)
     options = process_input(input || ARGV)
     success = true
-    success = rake_test unless options[:skip_tests]
+    # success = rake_test unless options[:skip_tests]
     success &&= commit_git(options[:message])
     success &&= commit_github if options[:github]
     success &&= deploy_heroku if options[:heroku]
