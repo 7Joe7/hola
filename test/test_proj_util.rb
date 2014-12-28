@@ -4,9 +4,10 @@ require 'joe_utils/utils/project_utility.rb'
 class JoeUtilsTest < Minitest::Test
 
   def test_commit
-    assert_equal(true, ProjectUtility.new.run(['-s', 'Test proj_util']))
+    # assert_equal(true, ProjectUtility.new.run(['-s', 'Test proj_util']))
+    ProjectUtility.new.run(['-s', 'Test proj_util'])
   end
-  
+  #
   # def test_commit_build
   #   assert_equal(true, ProjectUtility.new.run(['-bs', 'Test build proj_util']))
   # end
