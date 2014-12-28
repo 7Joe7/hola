@@ -20,6 +20,6 @@ class JoeUtilsTest < Minitest::Test
   end
 
   def test_gem_util
-    assert_equal(true, ProjectUtility.new.run(['-ips', 'Test build install push proj_util']), 'Something is wrong.')
+    assert(ProjectUtility.new.run(['-ips', 'Test build install push proj_util']), 'Something is wrong.')
   end
 end
