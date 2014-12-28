@@ -76,9 +76,9 @@ module CLIHelper
   # @param [Symbol] message_key
   # @param [String] command
   # @return [Boolean]
-  def execute(message_key, command)
+  def execute(message_key, command, no_success_pattern = nil)
     puts MESSAGES[message_key] if message_key
     puts (result = `#{command}`)
-    result !~ NO_SUCCESS
+    result !~ no_success_pattern || RegExpHelper::NO_SUCCESS
   end
 end
