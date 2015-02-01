@@ -1,16 +1,12 @@
 module ConsoleHelper
-  def get_input(message)
-    puts message
+  def process_input(talks, message_key)
+    puts talks[message_key]
     value = gets
-    value == 'exit' ? exit_program : next_step(value)
+    value == 'exit' ? exit_program(talks) : yield(value)
   end
 
-  def process_input(input, options = {})
-    input.each { |arg| yield arg }
-    options
-  end
-
-  def exit_program
+  def exit_program(talks)
+    puts talks['exit'] if talks['exit']
     exit
   end
 end
