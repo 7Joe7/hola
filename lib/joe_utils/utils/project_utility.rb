@@ -37,7 +37,6 @@ Text behind the command will be considered a message for git.'
             exit
         end
       elsif arg[0] == '-'
-        puts arg[0]
         arg[1..-1].each_char do |letter|
           case letter
             when 's'
